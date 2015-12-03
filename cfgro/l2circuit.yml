@@ -1,0 +1,21 @@
+---
+##### =========================================================================
+##### SAMPLE l2circuit config-read-only tables/views
+##### =========================================================================
+
+NeighborTable:
+    get: protocols/l2circuit/neighbor
+
+L2circuitTable:
+    get: protocols/l2circuit/neighbor/interface
+    required_keys:
+      neighbor: name
+    view: L2circuitView
+
+L2circuitView:
+    fields:
+        interface: name
+        circuit_id: virtual-circuit-id
+        description: description
+        community: community
+
